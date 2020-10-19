@@ -1,6 +1,9 @@
 name: hexlet-check
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
