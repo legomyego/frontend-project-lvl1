@@ -13,5 +13,7 @@ jobs:
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
-        run:  |
+        
+      - name: Run linter
+        run: |
           make lint
