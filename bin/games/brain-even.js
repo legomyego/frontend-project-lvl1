@@ -1,10 +1,11 @@
-import '../../src/index.js';
 import promptly from 'promptly';
+import greeting from '../../src/index.js';
 
 const getRandomNumber = () => Math.floor(Math.random() * 101);
 let correctAnswersCounter = 0;
 
-(async () => {
+async function game() {
+  greeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   while (correctAnswersCounter < 3) {
@@ -25,4 +26,6 @@ let correctAnswersCounter = 0;
       break;
     }
   }
-})();
+}
+
+game();
