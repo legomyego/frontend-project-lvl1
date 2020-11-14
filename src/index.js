@@ -1,6 +1,6 @@
 import promptly from 'promptly';
 
-const rounds = 3;
+const maxRounds = 3;
 let correctAnswersCounter = 0;
 
 async function getGreeting() {
@@ -26,7 +26,7 @@ export default async function runGame(rule, gameData) {
       return console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet 's try again, ${name}!`);
     }
 
-    if (rounds === correctAnswersCounter) {
+    if (maxRounds === correctAnswersCounter) {
       return console.log(`Congratulations, ${name}`);
     }
 
