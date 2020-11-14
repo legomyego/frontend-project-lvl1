@@ -13,6 +13,7 @@ async function getGreeting() {
 export default async function runGame(rule, gameData) {
   const name = await getGreeting();
   console.log(rule);
+
   async function gameProcess() {
     const { question, correctAnswer } = gameData();
     console.log(`Question: ${question}`);
@@ -31,5 +32,6 @@ export default async function runGame(rule, gameData) {
 
     return gameProcess(name);
   }
+
   gameProcess(name);
 }
