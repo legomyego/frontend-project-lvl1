@@ -10,12 +10,12 @@ async function getGreeting() {
   return name;
 }
 
-export default async function runGame(rule, gameData) {
+export default async function runGame(rule, getGameData) {
   const name = await getGreeting();
   console.log(rule);
 
   async function gameProcess() {
-    const { question, correctAnswer } = gameData();
+    const { question, correctAnswer } = getGameData();
     console.log(`Question: ${question}`);
     const userAnswer = await promptly.prompt('Your answer:');
 
