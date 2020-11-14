@@ -1,41 +1,41 @@
 import promptly from 'promptly';
 import getRandomNumber from '../utils.js';
+import getGreeting from '../../src/index.js';
 
-const description = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-async function greeting() {
-  console.log('Welcome to the Brain Games!');
-  const name = await promptly.prompt('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  return name;
+export default function getDescription() {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 }
+
+const isEven = (value) => value % 2 === 0;
 
 const rounds = 3;
 let correctAnswersCounter = 0;
 
 async function gameProcess(name) {
+  const question = getRandomNumber(0, 100);
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+
+  console.log(`Question: ${question}`);
+  const userAnswer = await promptly.prompt('Your answer:');
+
+  if (userAnswer === correctAnswer) {
+    console.log('Correct!');
+    correctAnswersCounter += 1;
+  } else {
+    return console.log(`${userAnswer} is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet 's try again, ${name}!`);
+  }
+
   if (rounds === correctAnswersCounter) {
     return console.log(`Congratulations, ${name}`);
   }
 
-  const randomNumber = getRandomNumber();
-  console.log(`Question: ${randomNumber}`);
-  const answer = await promptly.prompt('Your answer:');
-
-  if ((answer === 'yes' && randomNumber % 2 === 0) || (answer === 'no' && randomNumber % 2 !== 0)) {
-    console.log('Correct!');
-  } else {
-    return console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.`);
-  }
-
-  correctAnswersCounter += 1;
   return gameProcess(name);
 }
 
-async function game() {
-  const name = await greeting();
-  description();
+async function runGame() {
+  const name = await getGreeting();
+  getDescription();
   gameProcess(name);
 }
 
-game();
+runGame();
