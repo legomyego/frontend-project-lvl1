@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import getRandomNumber from '../utils.js';
 import runGame from '../../src/index.js';
 
