@@ -1,7 +1,6 @@
 # Hexlet tests and linter status:
-![hexlet-check](https://github.com/legomyego/frontend-project-lvl1/workflows/hexlet-check/badge.svg?branch=main)
+[![hexlet-check](https://github.com/legomyego/frontend-project-lvl1/workflows/hexlet-check/badge.svg?branch=main)](https://github.com/legomyego/frontend-project-lvl1/actions?query=workflow%3Ahexlet-check)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b2b3dbf08c3237f45dfd/maintainability)](https://codeclimate.com/github/legomyego/frontend-project-lvl1)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b2b3dbf08c3237f45dfd/test_coverage)](https://codeclimate.com/github/legomyego/frontend-project-lvl1/test_coverage)
 
 ## Project install:
 [![asciicast](https://asciinema.org/a/373323.svg)](https://asciinema.org/a/373323)
