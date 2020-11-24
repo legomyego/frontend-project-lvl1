@@ -1,6 +1,5 @@
-#!/usr/bin/env node
 import getRandomNumber from '../utils.js';
-import runGame from '../../src/index.js';
+import runGame from '../startGame.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -15,4 +14,4 @@ const generateGameData = () => {
   };
 };
 
-runGame(gameDescription, generateGameData);
+export default () => runGame(gameDescription, generateGameData);

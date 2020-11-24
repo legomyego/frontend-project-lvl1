@@ -1,6 +1,5 @@
-#!/usr/bin/env node
 import getRandomNumber from '../utils.js';
-import runGame from '../../src/index.js';
+import runGame from '../startGame.js';
 
 const gameDescription = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
@@ -32,4 +31,4 @@ const generateGameData = () => {
   };
 };
 
-runGame(gameDescription, generateGameData);
+export default () => runGame(gameDescription, generateGameData);
