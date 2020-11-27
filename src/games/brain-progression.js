@@ -4,16 +4,16 @@ import runGame from '../startGame.js';
 const gameDescription = 'What number is missing in the progression?';
 
 const getProgression = (startElement, step, count, missingElement) => {
-  let progressionString = '';
-  const missedElementMask = '..';
+  const progressionString = [];
+  const missedElementMask = '.. ';
+
   for (let i = 0; i <= count; i += 1) {
-    if (i === missingElement) {
-      progressionString += missedElementMask;
-    } else {
-      progressionString += ` ${startElement + step * i} `;
-    }
+    progressionString.push(`${startElement + step * i} `);
   }
-  return progressionString.trim();
+
+  progressionString[missingElement] = missedElementMask;
+
+  return progressionString.join(' ');
 };
 
 const generateGameData = () => {
